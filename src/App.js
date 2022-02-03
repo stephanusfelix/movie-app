@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
-import Movie from "./components/Movie";
-import Search from "./components/Search";
+import Movie from "./components/moviecard";
+import Navbar from "./components/navbar";
+import "./app.scss";
 
 class App extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class App extends React.Component {
     };
     this.search = this.search.bind(this);
   }
-  search(keyword){
+  search(keyword) {
     fetch(`https://www.omdbapi.com/?s=${keyword}&apikey=65525897`, {
       method: "GET",
     })
@@ -35,21 +36,23 @@ class App extends React.Component {
   }
   render() {
     return (
-      <>
-        <Search search={this.search}/>
-        <h1>Show your favorite movies</h1>
+      <div className="main">
+        <Navbar search={this.search} />
+
+        <h1 className="title-main">Show your favorite movies</h1>
+
         {this.movieList ? (
           <>
             <h1>Loading</h1>
           </>
         ) : (
-          <>
+          <div className="cards">
             {this.state.movieList.map((movie, index) => (
               <Movie data={movie} key={index} />
             ))}
-          </>
+          </div>
         )}
-      </>
+      </div>
     );
   }
 }
