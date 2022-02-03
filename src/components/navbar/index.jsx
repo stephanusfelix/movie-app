@@ -3,7 +3,7 @@ import Search from "../search";
 import "./navbar.scss";
 function Navbar(props) {
   return (
-    <nav>
+    <nav className="navbar">
       <div class="logo">MovieDB App</div>
 
       <div class="search-menu">

@@ -11,11 +11,25 @@
   border-radius: calc(var(--curve) * 1px);
   overflow: hidden;
   text-decoration: none;
-}
+  .card__image {
+    width: 100%;
+    height: auto;
+  }
+  .card__title {
+    font-size: 1.2em;
+    color: white;
+  }
 
-.card__image {
-  width: 100%;
-  height: auto;
+  .card__description {
+    padding: 0 2em 2em;
+    margin: 0;
+    color: #d7bdca;
+    font-family: "MockFlowFont";
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
 }
 
 .card__overlay {
@@ -48,22 +62,6 @@
 
 .card:hover .card__header {
   transform: translateY(0);
-}
-
-.card__title {
-  font-size: 1.2em;
-  color: white;
-}
-
-.card__description {
-  padding: 0 2em 2em;
-  margin: 0;
-  color: #d7bdca;
-  font-family: "MockFlowFont";
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
 }
 
 @media (max-width: 900px) {

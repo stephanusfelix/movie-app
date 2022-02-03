@@ -16,7 +16,9 @@ function Movie(props) {
         <p class="card__description">
           Year : {props.data.Year} <br></br>
           Type : {props.data.Type} <br></br>
-          imdb ID : {props.data.imdbID}
+          <a href={`https://www.imdb.com/title/${props.data.imdbID}/`}>
+            Visit imdb site
+          </a>
         </p>
       </div>
     </div>

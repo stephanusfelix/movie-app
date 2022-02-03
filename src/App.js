@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import Movie from "./components/moviecard";
 import Navbar from "./components/navbar";
 import "./app.scss";
@@ -24,7 +23,7 @@ class App extends React.Component {
       });
   }
   componentDidMount() {
-    fetch("https://www.omdbapi.com/?s=man&apikey=65525897", {
+    fetch("https://www.omdbapi.com/?s=man&page=1&apikey=65525897", {
       method: "GET",
     })
       .then((res) => res.json())
